@@ -4,7 +4,7 @@ import from level { SEGMENTS }
 
 obj Segment;
 
-obj Level;
+obj LevelData;
 
 obj Engine {
     has app: App;
