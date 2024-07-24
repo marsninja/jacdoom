@@ -1,1 +1,1 @@
-import pyray as ray;
+glob WIN_RES = (WIN_WIDTH, WIN_HEIGHT) = (1600, 900);
