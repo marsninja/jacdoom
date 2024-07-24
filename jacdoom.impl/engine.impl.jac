@@ -1,6 +1,13 @@
+:o:Engine:c:postinit {
+    self.level_data = LevelData(engine=self);
+    self.map_renderer = MapRenderer(engine=self);
+}
+
 :o:Engine:c:update {}
 
-:o:Engine:c:draw_2d {}
+:o:Engine:c:draw_2d {
+    self.map_renderer.draw();
+}
 
 :o:Engine:c:draw_3d {}
 
