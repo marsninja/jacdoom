@@ -20,6 +20,7 @@ obj MapRenderer {
 
     can postinit;
     can draw;
+    can draw_normal(p0: glm.Vec2, p1: glm.Vec2, color: ray.Color, scale: float=12.0);
     can draw_segments;
     can remap_array(arr: list[glm.Vec2]) -> list[glm.Vec2];
     can remap_vec2(vec: glm.Vec2) -> glm.Vec2;

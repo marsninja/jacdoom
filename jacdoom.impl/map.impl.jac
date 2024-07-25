@@ -8,11 +8,20 @@
     self.draw_segments();
 }
 
+:o:MapRenderer:c:draw_normal {
+    p10: float = p1 - p0;
+    normal = glm.normalize(glm.vec2(-p10.y, p10.x));
+    n0 = (p0 + p1) / 2.0;
+    n1 = n0 + normal * scale;
+    ray.draw_line_v((n0.x, n0.y), (n1.x, n1.y), color);
+}
+
 :o:MapRenderer:c:draw_segments {
     for (p0, p1) in self.raw_segments {
         ((x0, y0), (x1, y1)) = (p0, p1);
         ray.draw_line_v((x0, y0), (x1, y1), ray.ORANGE);
-        ray.draw_circle((x0, y0), 3, ray.RED);
+        self.draw_normal(p0, p1, ray.GREEN);
+        ray.draw_circle_v((x0, y0), 3, ray.WHITE);
     }
 }
 
